@@ -6,7 +6,7 @@ import ImageFixed from "./image-fixed";
 
 const TitleBar = styled.div`
   width: 100%;
-  height: 95px;
+  height: 102px;
   background: #252b33;
   color: #25b3b8;
   border-bottom: 7px solid #25b3b8;
@@ -79,27 +79,54 @@ const IconStyle = styled.div`
 `;
 
 const Header = ({ siteTitle }) => {
-  const ssLogo = useStaticQuery(graphql`
+  const iconImages = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "ssLogoSmall.png" }) {
-        childImageSharp {
-          fixed(width: 32, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
+      ssLogo: file(relativePath: { eq: "ssLogoSmall.png" }) {
+        ...squareImage
+      }
+
+      github: file(relativePath: { eq: "GitHub.png" }) {
+        ...squareImage
+      }
+
+      twitter: file(relativePath: { eq: "twitter.png" }) {
+        ...squareImage
+      }
+
+      links: site {
+        siteMetadata {
+          links
         }
       }
     }
   `);
+  const iterateThroughIcons = icons => {
+    const links = icons.links.siteMetadata.links;
 
+    return Object.keys(icons)
+      .map((iconName, i) => {
+        if (iconName !== "links") {
+          return { icon: icons[iconName], key: iconName, link: links[i] };
+        }
+      })
+      .filter(icon => {
+        if (icon) {
+          return icon;
+        }
+      })
+      .map(icon => (
+        <IconStyle key={icon.key}>
+          <a href={icon.link}>
+            <ImageFixed image={icon.icon} />
+          </a>
+        </IconStyle>
+      ));
+  };
   return (
     <MainHeader>
       <TitleBar>
         <h3>AARONENDSLEY.CODES</h3>
-        <IconContainer>
-          <IconStyle>
-            <ImageFixed image={ssLogo} />
-          </IconStyle>
-        </IconContainer>
+        <IconContainer>{iterateThroughIcons(iconImages)}</IconContainer>
       </TitleBar>
       <SiteTitle>
         <TitleH1>
@@ -125,5 +152,15 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 };
+
+export const squareImage = graphql`
+  fragment squareImage on File {
+    childImageSharp {
+      fixed(width: 32, height: 32) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`;
 
 export default Header;
