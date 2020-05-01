@@ -3,11 +3,25 @@ html {
   font-weight: normal;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #25b3b8 #252b33;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track {
+  background: #252b33;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #25b3b8;
+  border-radius: 6px;
+  border: 3px solid #252b33;
 }
 article,
 aside,

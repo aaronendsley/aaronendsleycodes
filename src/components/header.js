@@ -76,6 +76,7 @@ const IconContainer = styled.div`
 const IconStyle = styled.div`
   margin-right: 10px;
   margin-top: 5px;
+  margin-left: 10px;
 `;
 
 const Header = ({ siteTitle }) => {
