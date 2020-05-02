@@ -37,7 +37,10 @@ const Layout = ({ children }) => {
       <MainConatiner>
         <main>{children}</main>
       </MainConatiner>
-      <Footer>©Aaron Endsley {new Date().getFullYear()} </Footer>
+      <Footer>
+        {" "}
+        Designed and Developed by Aaron Endsley © {new Date().getFullYear()}{" "}
+      </Footer>
     </>
   );
 };

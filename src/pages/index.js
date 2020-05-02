@@ -29,12 +29,51 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Spacer></Spacer>
-      <ContentBox></ContentBox>
+      <ContentBox title="Welcome">
+        <p>hi</p>
+      </ContentBox>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </Layout>
   );
 };
 
 export default IndexPage;
-//<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//      <ImageFluid image={data} />
-//  </div>

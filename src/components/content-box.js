@@ -24,11 +24,19 @@ const TitleBar = styled.div`
 const ContentTitle = styled.div`
   border-bottom: solid 4px #252b33;
   width: 85%;
+  position: relative;
 `;
 
-const TitleText = styled.p`
+const TitleText = styled.h2`
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+`;
+
+const ChildContainer = styled.div`
+  width: 100%;
 `;
 
 const ContentBox = props => {
@@ -36,9 +44,10 @@ const ContentBox = props => {
     <Container>
       <TitleBar>
         <ContentTitle>
-          <TitleText>Welcome</TitleText>
+          <TitleText>{props.title.toUpperCase()}</TitleText>
         </ContentTitle>
       </TitleBar>
+      <ChildContainer>{props.children}</ChildContainer>
     </Container>
   );
 };
