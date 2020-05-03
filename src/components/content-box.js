@@ -40,6 +40,7 @@ const ChildContainer = styled.div`
 `;
 
 const ContentBox = props => {
+  console.log(props.children);
   return (
     <Container>
       <TitleBar>
