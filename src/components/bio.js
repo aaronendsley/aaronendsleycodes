@@ -12,6 +12,26 @@ const BioContainer = styled.div`
     flex-direction: row;
   }
 `;
+
+const BottomBorderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+`;
+
+const BorderOne = styled.div`
+  border-bottom: 12px solid #25b3b8;
+  flex: 3;
+  align-self: flex-start;
+`;
+
+const BorderTwo = styled.div`
+  border-bottom: 10px solid #252b33;
+  flex: 5;
+  align-self: flex-start;
+`;
+
 const FirstItem = styled.div`
   flex: 2;
   width: 50%;
@@ -42,16 +62,22 @@ const TextContainer = styled.div`
 const Bio = props => {
   console.log(props.image);
   return (
-    <BioContainer>
-      <FirstItem>
-        <ImageContainer>
-          <ImageFluid image={props.image}></ImageFluid>
-        </ImageContainer>
-      </FirstItem>
-      <TextContainer>
-        <p>{props.text}</p>
-      </TextContainer>
-    </BioContainer>
+    <>
+      <BioContainer>
+        <FirstItem>
+          <ImageContainer>
+            <ImageFluid image={props.image}></ImageFluid>
+          </ImageContainer>
+        </FirstItem>
+        <TextContainer>
+          <p>{props.text}</p>
+        </TextContainer>
+      </BioContainer>
+      <BottomBorderContainer>
+        <BorderOne></BorderOne>
+        <BorderTwo></BorderTwo>
+      </BottomBorderContainer>
+    </>
   );
 };
 

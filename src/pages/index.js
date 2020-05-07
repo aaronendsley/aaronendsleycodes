@@ -35,7 +35,6 @@ const IndexPage = () => {
       <Spacer></Spacer>
       <ContentBox title="Welcome">
         <Bio image={data} text={sampleText}></Bio>
-        <p>Hi</p>
       </ContentBox>
       <br />
       <br />
