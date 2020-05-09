@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ImageFluid from "./image-fluid";
+import DecorativeBorder from "./decorativeBorder";
 
 const BioContainer = styled.div`
   width: 95%;
@@ -11,25 +12,6 @@ const BioContainer = styled.div`
   @media only screen and (min-width: 1000px) {
     flex-direction: row;
   }
-`;
-
-const BottomBorderContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-`;
-
-const BorderOne = styled.div`
-  border-bottom: 12px solid #25b3b8;
-  flex: 3;
-  align-self: flex-start;
-`;
-
-const BorderTwo = styled.div`
-  border-bottom: 10px solid #252b33;
-  flex: 5;
-  align-self: flex-start;
 `;
 
 const FirstItem = styled.div`
@@ -60,7 +42,6 @@ const TextContainer = styled.div`
 `;
 
 const Bio = props => {
-  console.log(props.image);
   return (
     <>
       <BioContainer>
@@ -73,10 +54,7 @@ const Bio = props => {
           <p>{props.text}</p>
         </TextContainer>
       </BioContainer>
-      <BottomBorderContainer>
-        <BorderOne></BorderOne>
-        <BorderTwo></BorderTwo>
-      </BottomBorderContainer>
+      <DecorativeBorder bordersize="10"></DecorativeBorder>
     </>
   );
 };

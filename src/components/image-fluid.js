@@ -13,7 +13,6 @@ import Img from "gatsby-image";
  */
 
 const ImageFluid = props => {
-  console.log(props.image);
   return <Img fluid={props.image.placeholderImage.childImageSharp.fluid} />;
 };
 
