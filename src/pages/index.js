@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ContentBox from "../components/content-box";
 import Bio from "../components/bio";
+import CategoryContainer from "../components/categoryContainer";
+import ContentContainerFlex from "../components/content-container-flex";
 import "../fonts/fonts.css";
 
 const Spacer = styled.div`
@@ -31,11 +33,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Spacer></Spacer>
-      <ContentBox title="Welcome">
-        <Bio image={data} text={sampleText}></Bio>
-      </ContentBox>
-      <br />
-      <br />
+      <ContentContainerFlex>
+        <ContentBox title="Welcome">
+          <Bio image={data} text={sampleText}></Bio>
+        </ContentBox>
+
+        <CategoryContainer></CategoryContainer>
+      </ContentContainerFlex>
       <br />
       <br />
       <br />
