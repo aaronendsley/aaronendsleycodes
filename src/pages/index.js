@@ -34,11 +34,11 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Spacer></Spacer>
       <ContentContainerFlex>
-        <ContentBox title="Welcome">
+        <ContentBox title="Welcome" flex="6" basis="60%" desktopWidth="400">
           <Bio image={data} text={sampleText}></Bio>
         </ContentBox>
-
-        <CategoryContainer></CategoryContainer>
+        <span></span>
+        <CategoryContainer flex="2" desktopWidth="100px"></CategoryContainer>
       </ContentContainerFlex>
       <br />
       <br />

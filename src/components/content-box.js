@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
   margin: 0 auto;
   @media only screen and (min-width: 1000px) {
-    width: 800px;
-    margin: 0;
+    margin: 20px;
   }
+  flex: ${props => props.flex};
 `;
+// width: 100%;
 
 const TitleBar = styled.div`
   width: 100%;
@@ -41,7 +41,11 @@ const ChildContainer = styled.div`
 
 const ContentBox = props => {
   return (
-    <Container>
+    <Container
+      flex={props.flex}
+      basis={props.basis}
+      desktopWidth={props.desktopWidth}
+    >
       <TitleBar>
         <ContentTitle>
           <TitleText>{props.title.toUpperCase()}</TitleText>

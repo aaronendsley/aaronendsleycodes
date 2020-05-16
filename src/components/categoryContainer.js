@@ -1,19 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import DecorativeBorder from "../components/decorativeBorder";
-import ContentBox from "./content-box";
+// import ContentBox from "./content-box";
 
 const Container = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  margin: 20px;
+  width: 100%;
   @media only screen and (min-width: 500px) {
     width: 50%;
   }
   @media only screen and (min-width: 1000px) {
-    width: 350px;
-    margin: 0;
+    width: ${props => props.desktopWidth};
+    margin: 20px;
   }
+
+  flex: ${props => props.flex};
+  flex-basis: auto;
 `;
+// width: 80%;
 
 const TitleBar = styled.div`
   width: 100%;
@@ -64,7 +68,7 @@ const Category = styled.h3`
 
 const CategoryContainer = props => {
   return (
-    <Container>
+    <Container flex={props.flex} desktopWidth={props.desktopWidth}>
       <TitleBar>
         <ContentTitle>
           <TitleText>{"Categories"}</TitleText>

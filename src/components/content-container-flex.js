@@ -8,10 +8,15 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (min-width: 1000px) {
-    width: 100%;
+    width: 95%;
     flex-direction: row;
   }
+
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
 `;
+// flex-flow: column wrap;
 
 const ContentContainerFlex = props => <Container>{props.children}</Container>;
 
