@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  width: 100%;
   margin: 0 auto;
   @media only screen and (min-width: 1000px) {
     margin: 20px;
+    width: ${props => props.desktopWidth};
   }
   flex: ${props => props.flex};
+  flex-basis: auto;
 `;
 // width: 100%;
 
@@ -41,11 +44,7 @@ const ChildContainer = styled.div`
 
 const ContentBox = props => {
   return (
-    <Container
-      flex={props.flex}
-      basis={props.basis}
-      desktopWidth={props.desktopWidth}
-    >
+    <Container flex={props.flex} desktopWidth={props.desktopWidth}>
       <TitleBar>
         <ContentTitle>
           <TitleText>{props.title.toUpperCase()}</TitleText>

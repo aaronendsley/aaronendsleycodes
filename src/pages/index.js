@@ -12,6 +12,10 @@ import "../fonts/fonts.css";
 const Spacer = styled.div`
   width: 100%;
   margin-top: 200px;
+
+  @media only screen and (min-width: 1000px) {
+    margin-top: 130px;
+  }
 `;
 
 const IndexPage = () => {
@@ -34,7 +38,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Spacer></Spacer>
       <ContentContainerFlex>
-        <ContentBox title="Welcome" flex="6" basis="60%" desktopWidth="400">
+        <ContentBox title="Welcome" flex="6" desktopWidth="430px">
           <Bio image={data} text={sampleText}></Bio>
         </ContentBox>
         <span></span>
