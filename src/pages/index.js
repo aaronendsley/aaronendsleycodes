@@ -7,6 +7,7 @@ import ContentBox from "../components/content-box";
 import Bio from "../components/bio";
 import CategoryContainer from "../components/categoryContainer";
 import ContentContainerFlex from "../components/content-container-flex";
+import MostRecent from "../components/most-recent";
 import "../fonts/fonts.css";
 
 const Spacer = styled.div`
@@ -42,9 +43,10 @@ const IndexPage = () => {
           <Bio image={data} text={sampleText}></Bio>
         </ContentBox>
         <span></span>
-        <CategoryContainer flex="2" desktopWidth="100px"></CategoryContainer>
+        <CategoryContainer flex="3" desktopWidth="100px"></CategoryContainer>
       </ContentContainerFlex>
       <br />
+      <MostRecent></MostRecent>
       <br />
       <br />
       <br />

@@ -16,8 +16,7 @@ import "./layout.css";
 
 const MainConatiner = styled.div`
   margin: 0 auto;
-  maxwidth: 90%;
-  padding: 0 1.0875rem 1.45rem;
+  maxwidth: 100%;
 `;
 
 const Layout = ({ children }) => {

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import DecorativeBorder from "../components/decorativeBorder";
-// import ContentBox from "./content-box";
 
 const Container = styled.div`
   margin: 20px;
@@ -17,7 +16,6 @@ const Container = styled.div`
   flex: ${props => props.flex};
   flex-basis: auto;
 `;
-// width: 80%;
 
 const TitleBar = styled.div`
   width: 100%;
@@ -51,7 +49,12 @@ const ChildContainer = styled.div`
   flex-direction: column;
 `;
 
-const TestCategories = ["Programming", "Theology", "Books", "Random"];
+const TestCategories = [
+  "Programming",
+  "Theology",
+  "Book Reviews",
+  "Random Thoughts",
+];
 
 const CategoryBox = styled.div`
   display: flex;
