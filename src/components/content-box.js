@@ -17,12 +17,12 @@ const TitleBar = styled.div`
   width: 100%;
   background: #dcf4f5;
   color: #252b33;
-  border-bottom: solid 4px #25b3b8;
   height: 50px;
+  border-bottom: solid 4px #25b3b8;
   box-shadow 6px 4px 5px rgba( 0, 0, 0, .2);
   display:flex;
   justify-content: flex-end;
-`;
+  `;
 
 const ContentTitle = styled.div`
   border-bottom: solid 4px #252b33;

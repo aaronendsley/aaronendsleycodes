@@ -5,6 +5,7 @@ const Container = styled.div`
   width: 80%;
   display: flex;
   margin: 0 auto;
+  height: auto;
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (min-width: 1000px) {
