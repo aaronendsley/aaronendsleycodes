@@ -9,6 +9,7 @@ import CategoryContainer from "../components/categoryContainer";
 import ContentContainerFlex from "../components/content-container-flex";
 import MostRecent from "../components/most-recent";
 import BlogPostDescription from "../components/BlogPostDescription";
+import PostContainer from "../components/post-container";
 import "../fonts/fonts.css";
 
 const Spacer = styled.div`
@@ -61,6 +62,31 @@ const IndexPage = () => {
         "This is the most amazing Article in the world, if you read this article you will be pleased with how awesome it is and you will be thinking to your self 'Man I really think this is awesome', if you like to experience joy please read this article",
       photo: "",
     },
+    {
+      title: "Super Cool Blog Post Article",
+      description:
+        "This is the most amazing Article in the world, if you read this article you will be pleased with how awesome it is and you will be thinking to your self 'Man I really think this is awesome', if you like to experience joy please read this article",
+      photo: "",
+    },
+    {
+      title: "Blog Post 2: How Sample Text rules the world",
+      description:
+        "This is the most amazing Article in the world, if you read this article you will be pleased with how awesome it is and you will be thinking to your self 'Man I really think this is awesome', if you like to experience joy please read this article",
+      photo: "",
+    },
+    {
+      title: "How much more sample text can you read",
+      description:
+        "This is the most amazing Article in the world, if you read this article you will be pleased with how awesome it is and you will be thinking to your self 'Man I really think this is awesome', if you like to experience joy please read this article",
+      photo: "",
+    },
+    {
+      title:
+        "The Rise and Fall of Sample Text: A History of non-sensical titles",
+      description:
+        "This is the most amazing Article in the world, if you read this article you will be pleased with how awesome it is and you will be thinking to your self 'Man I really think this is awesome', if you like to experience joy please read this article",
+      photo: "",
+    },
   ];
   return (
     <Layout>
@@ -75,20 +101,15 @@ const IndexPage = () => {
       </ContentContainerFlex>
       <br />
       <MostRecent></MostRecent>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <ContentContainerFlex>
+      <PostContainer>
         {sampleArticles.map(item => (
           <BlogPostDescription
             key={item.title}
             title={item.title}
+            description={item.description}
           ></BlogPostDescription>
         ))}
-      </ContentContainerFlex>
+      </PostContainer>
       <br />
       <br />
       <br />

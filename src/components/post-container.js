@@ -8,6 +8,7 @@ const Container = styled.div`
   margin: 0 auto;
   height: 100%;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
   @media only screen and (min-width: 1000px) {
     width: 95%;
@@ -20,6 +21,6 @@ const Container = styled.div`
 `;
 // flex-flow: column wrap;
 
-const ContentContainerFlex = props => <Container>{props.children}</Container>;
+const PostContainer = props => <Container>{props.children}</Container>;
 
-export default ContentContainerFlex;
+export default PostContainer;

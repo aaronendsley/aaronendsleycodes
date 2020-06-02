@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  margin: 0 auto;
-  @media only screen and (min-width: 1000px) {
-    margin: 20px;
-    width: ${props => props.desktopWidth};
-  }
+  margin: 70px auto;
   display: flex;
-  flex-direction: column;
   flex: ${props => props.flex};
+  flex-direction: column;
   flex-basis: auto;
   min-height: 100%;
+  @media only screen and (min-width: 1000px) {
+    margin: 100px;
+    width: ${props => props.desktopWidth};
+  }
 `;
 // width: 100%;
 
@@ -20,8 +20,7 @@ const TitleBar = styled.div`
   width: 100%;
   background: #dcf4f5;
   color: #252b33;
-  height: 50px;
-  min-height:50px;
+  min-height:50%;
   border-bottom: solid 4px #25b3b8;
   box-shadow 6px 4px 5px rgba( 0, 0, 0, .2);
   display:flex;
@@ -30,6 +29,7 @@ const TitleBar = styled.div`
   align-content: flex-end;
   display:flex;
   flex:1;
+  flex-basis:auto;
   `;
 
 const ContentTitle = styled.div`
@@ -50,7 +50,7 @@ const ChildContainer = styled.div`
   width: 100%;
 `;
 
-const ContentBox = props => {
+const ContentBoxSmall = props => {
   return (
     <Container flex={props.flex} desktopWidth={props.desktopWidth}>
       <TitleBar>
@@ -63,4 +63,4 @@ const ContentBox = props => {
   );
 };
 
-export default ContentBox;
+export default ContentBoxSmall;
