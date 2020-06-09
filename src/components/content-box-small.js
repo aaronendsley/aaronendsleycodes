@@ -14,13 +14,11 @@ const Container = styled.div`
     width: ${props => props.desktopWidth};
   }
 `;
-// width: 100%;
-
 const TitleBar = styled.div`
   width: 100%;
   background: #dcf4f5;
   color: #252b33;
-  min-height:50%;
+  min-height:150px;
   border-bottom: solid 4px #25b3b8;
   box-shadow 6px 4px 5px rgba( 0, 0, 0, .2);
   display:flex;
@@ -30,6 +28,9 @@ const TitleBar = styled.div`
   display:flex;
   flex:1;
   flex-basis:auto;
+  @media only screen and (min-width: 1000px){
+    min-height:50%;
+  }
   `;
 
 const ContentTitle = styled.div`
@@ -40,7 +41,7 @@ const ContentTitle = styled.div`
 
 const TitleText = styled.h2`
   margin: 0;
-  padding: 0;
+  padding: 0 10px 0 0;
   position: absolute;
   left: 0;
   bottom: 0;
