@@ -1,26 +1,22 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
-dotenv.config({ path: ".env" });
+dotenv.config({ path: '.env' });
 
 console.log(process.env.SANITY_TOKEN);
 export default {
   siteMetadata: {
     title: `Undefined Is Not A Function`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    links: [
-      "https://www.sufficientscripts.io/",
-      "https://github.com/aaronendsley",
-      "https://twitter.com/aaronendsley",
-    ],
+    links: ['https://www.sufficientscripts.io/', 'https://github.com/aaronendsley', 'https://twitter.com/aaronendsley'],
     author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
         projectId: process.env.SANITY_ID,
-        dataset: "production",
+        dataset: 'production',
         watchMode: true,
         token: process.env.SANITY_TOKEN,
       },

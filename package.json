@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "aaronendsleycodes",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My Gatsby Front end for my blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Aaron Endsley <aaronendsley@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
@@ -53,7 +53,8 @@
         "error",
         {
           "endOfLine": "auto",
-          "singleQuote": true
+          "singleQuote": true,
+          "semi": true
         }
       ]
     }
