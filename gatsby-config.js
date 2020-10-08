@@ -1,4 +1,9 @@
-module.exports = {
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+console.log(process.env.SANITY_TOKEN);
+export default {
   siteMetadata: {
     title: `Undefined Is Not A Function`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -11,6 +16,15 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: process.env.SANITY_ID,
+        dataset: "production",
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
