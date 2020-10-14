@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import DecorativeBorder from "../components/decorativeBorder";
+import React from 'react';
+import styled from 'styled-components';
+import DecorativeBorder from '../components/decorativeBorder';
 
 const Container = styled.div`
   margin: 20px;
@@ -9,11 +9,11 @@ const Container = styled.div`
     width: 50%;
   }
   @media only screen and (min-width: 1000px) {
-    width: ${props => props.desktopWidth};
+    width: ${(props) => props.desktopWidth};
     margin: 20px;
   }
 
-  flex: ${props => props.flex};
+  flex: ${(props) => props.flex};
   flex-basis: auto;
 `;
 
@@ -49,12 +49,7 @@ const ChildContainer = styled.div`
   flex-direction: column;
 `;
 
-const TestCategories = [
-  "Programming",
-  "Theology",
-  "Book Reviews",
-  "Random Thoughts",
-];
+const TestCategories = ['Programming', 'Theology', 'Book Reviews', 'Random Thoughts'];
 
 const CategoryBox = styled.div`
   display: flex;
@@ -69,19 +64,19 @@ const Category = styled.h3`
   padding: 0;
 `;
 
-const CategoryContainer = props => {
+const CategoryContainer = (props) => {
   return (
     <Container flex={props.flex} desktopWidth={props.desktopWidth}>
       <TitleBar>
         <ContentTitle>
-          <TitleText>{"Categories"}</TitleText>
+          <TitleText>{'Categories'}</TitleText>
         </ContentTitle>
       </TitleBar>
       <ChildContainer>
-        {TestCategories.map(category => (
+        {TestCategories.map((category) => (
           <CategoryBox key={category}>
             <Category>{category}</Category>
-            <DecorativeBorder bordersize={"5"}></DecorativeBorder>
+            <DecorativeBorder bordersize={'5'}></DecorativeBorder>
           </CategoryBox>
         ))}
       </ChildContainer>

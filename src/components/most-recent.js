@@ -14,10 +14,10 @@ const Bar = styled.div`
   }
 `;
 
-const MostRecent = () => (
+export default function MostRecent() {
+  return (
   <Bar>
     <h3>Most Recent Posts..</h3>
   </Bar>
-);
-
-export default MostRecent;
+)
+}

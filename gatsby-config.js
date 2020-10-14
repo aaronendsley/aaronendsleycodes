@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });
 
-console.log(process.env.SANITY_TOKEN);
+
 export default {
   siteMetadata: {
     title: `Undefined Is Not A Function`,
