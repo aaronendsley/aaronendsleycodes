@@ -49,8 +49,6 @@ const ChildContainer = styled.div`
   flex-direction: column;
 `;
 
-const TestCategories = ['Programming', 'Theology', 'Book Reviews', 'Random Thoughts'];
-
 const CategoryBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,24 +62,22 @@ const Category = styled.h3`
   padding: 0;
 `;
 
-const CategoryContainer = (props) => {
-  return (
-    <Container flex={props.flex} desktopWidth={props.desktopWidth}>
-      <TitleBar>
-        <ContentTitle>
-          <TitleText>{'Categories'}</TitleText>
-        </ContentTitle>
-      </TitleBar>
-      <ChildContainer>
-        {TestCategories.map((category) => (
-          <CategoryBox key={category}>
-            <Category>{category}</Category>
-            <DecorativeBorder bordersize={'5'}></DecorativeBorder>
-          </CategoryBox>
-        ))}
-      </ChildContainer>
-    </Container>
-  );
-};
+const CategoryContainer = (props) => (
+  <Container flex={props.flex} desktopWidth={props.desktopWidth}>
+    <TitleBar>
+      <ContentTitle>
+        <TitleText>{'Categories'}</TitleText>
+      </ContentTitle>
+    </TitleBar>
+    <ChildContainer>
+      {TestCategories.map((category) => (
+        <CategoryBox key={category}>
+          <Category>{category}</Category>
+          <DecorativeBorder bordersize={'5'}></DecorativeBorder>
+        </CategoryBox>
+      ))}
+    </ChildContainer>
+  </Container>
+);
 
 export default CategoryContainer;

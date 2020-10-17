@@ -43,22 +43,7 @@
   "keywords": [
     "gatsby"
   ],
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0,
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto",
-          "singleQuote": true,
-          "semi": true
-        }
-      ]
-    }
-  },
+  
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
