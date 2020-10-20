@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 const BlogContainer = styled.div`
     display: grid;
@@ -11,7 +12,7 @@ const BlogContainer = styled.div`
 `;
 const PostContainer = styled.div`
     display: grid;
-    height: 600px;
+    height: 700px;
     margin-bottom: 50px;
     grid-template-rows: 0.1fr 0.5fr;
     border: solid 7px rgba(37, 179, 184, 0.5);
@@ -20,7 +21,12 @@ const PostContainer = styled.div`
 `;
 const PostContentContainer = styled.div`
     display: grid;
-    grid-template-rows: 0.5fr 2fr;
+    grid-template-rows: 0.5fr 0.3fr 1fr;
+    gap: 10px;
+    height: max-content;
+    img {
+        border: 10px solid #dcf4f5;
+    }
 `;
 const TitleContainer = styled.div`
     background-color: #dcf4f5;
@@ -52,6 +58,60 @@ const Title = styled.div`
     }
 `;
 
+const ButtonContainer = styled.div`
+    display: grid;
+    width: 100%;
+`;
+
+const BlogButton = styled.button`
+    width: 60%;
+    height: 50px;
+    margin: 10px auto;
+    font-size: 1rem;
+    background-color: #252b33;
+    color: #25b3b8;
+    border: solid 7px #25b3b8;
+    display: block;
+    border-radius: 20px;
+    text-transform: capitalize;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    a {
+        box-shadow: none;
+    }
+    a:link {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+    a:visted {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+`;
+
+const ContentContainer = styled.div`
+    width: 95%;
+    margin: 10px auto;
+    background-color: #dcf4f5;
+    color: #252b33;
+    border: solid 5px #25b3b8;
+    border-radius: 20px;
+    p {
+        font-size: 0.8rem;
+        color: #252b33;
+        width: 80%;
+        margin: 20px auto;
+    }
+`;
+
 function BlogPost({ post }) {
     return (
         <PostContainer>
@@ -65,7 +125,17 @@ function BlogPost({ post }) {
                     fluid={post.image.asset.fluid}
                     alt={`Image for the article : ${post.postTitle}`}
                 />
-                <p>{post.postArticle}</p>
+                <ContentContainer>
+                    <p>{post.postArticle}</p>
+                    <ButtonContainer>
+                        <Link
+                            to={`/blog/${post.slug.current}`}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <BlogButton>Read This Post</BlogButton>
+                        </Link>
+                    </ButtonContainer>
+                </ContentContainer>
             </PostContentContainer>
         </PostContainer>
     );

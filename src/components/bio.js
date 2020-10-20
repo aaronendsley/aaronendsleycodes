@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 import DecorativeBorder from './decorativeBorder';
 
 const GridContainer = styled.div`
@@ -83,6 +84,39 @@ const TextContainer = styled.div`
     }
 `;
 
+const BlogButton = styled.button`
+    width: 60%;
+    height: 75px;
+    margin: 50px auto;
+    font-size: 1.2rem;
+    background-color: #252b33;
+    color: #25b3b8;
+    border: solid 7px #25b3b8;
+    display: block;
+    border-radius: 20px;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+    a {
+        box-shadow: none;
+    }
+    a:link {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+    a:visted {
+        text-decoration: none;
+        color: #25b3b8;
+        box-shadow: none;
+    }
+`;
+
 export default function Bio({ title, image, text, altText }) {
     return (
         <GridContainer>
@@ -99,6 +133,11 @@ export default function Bio({ title, image, text, altText }) {
                 </FirstItem>
                 <TextContainer>
                     <p>{text}</p>
+                    <Link to="/blog" style={{ textDecoration: 'none' }}>
+                        <BlogButton alt="Link to the blog">
+                            Check out the Blog
+                        </BlogButton>
+                    </Link>
                 </TextContainer>
             </BioContainer>
             <DecorativeBorder bordersize="10" />
