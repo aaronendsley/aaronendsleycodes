@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import BlogPostDescription from '../components/BlogPostDescription';
-import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const PostContainer = styled.div`
     width: 100%;
@@ -13,11 +13,12 @@ export default function Blog({ data }) {
     const posts = data.allSanityBlogPost.nodes;
     console.log(posts);
     return (
-        <Layout>
+        <>
+            <SEO title="Blog Posts" />
             <PostContainer>
                 <BlogPostDescription posts={posts} />
             </PostContainer>
-        </Layout>
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import Layout from '../components/layout';
+
 import SEO from '../components/seo';
 
 import MostRecent from '../components/most-recent';
@@ -27,12 +27,12 @@ export default function IndexPage({ data }) {
     const posts = data.allSanityBlogPost.nodes;
     console.log(posts);
     return (
-        <Layout>
+        <div>
             <SEO title="Home: AaronEndsley.codes" />
             <Intro introData={introData} />
             <MostRecent />
             <BlogPostDescription posts={posts} />
-        </Layout>
+        </div>
     );
 }
 
