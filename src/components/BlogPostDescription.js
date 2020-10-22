@@ -15,7 +15,7 @@ const PostContainer = styled.div`
     height: 700px;
     margin-bottom: 50px;
     grid-template-rows: 0.1fr 0.5fr;
-    border: solid 7px rgba(37, 179, 184, 0.5);
+    /* border: solid 7px rgba(37, 179, 184, 0.5); */
     border-radius: 10px;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
 `;
