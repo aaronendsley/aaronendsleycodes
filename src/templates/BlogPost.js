@@ -2,9 +2,10 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import BlockContent from '@sanity/block-content-to-react';
 
 const BlogPostContainer = styled.div`
-    width: 80%;
+    width: 95%;
     display: grid;
     margin: 100px auto;
 `;
@@ -16,7 +17,8 @@ const TitleContainer = styled.div`
     width: 100%;
     border: 10px solid #252b33;
     border-radius: 20px;
-    height: 650px;
+
+    height: 500px;
 `;
 
 const Title = styled.div`
@@ -28,6 +30,7 @@ const Title = styled.div`
     z-index: 10;
     background-color: #252b33;
     border-bottom: solid 10px #25b3b8;
+    border-top: solid 3px #25b3b8;
     border-radius: 0 0 10px 10px;
     color: #25b3b8;
 
@@ -43,6 +46,7 @@ const Title = styled.div`
         vertical-align: text-bottom;
         display: inline;
         align-self: end;
+        text-transform: capitalize;
     }
 
     @media (min-width: 1000px) {
@@ -50,8 +54,46 @@ const Title = styled.div`
     }
 `;
 
+const BlogPostStyles = styled.div`
+    width: 80%;
+    margin: 80px auto;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #25b3b8;
+        background: #252b33;
+        border-radius: 5px;
+        padding: 10px 10px 10px 10px;
+        margin: 0 auto;
+        border-bottom: 5px solid #25b3b8;
+        border-top: 5px solid #25b3b8;
+        width: 95%;
+        font-weight: bolder;
+
+        @media (min-width: 1000px) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    p {
+        padding: 20px;
+        line-height: 1.8rem;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        width: 100%;
+        @media (min-width: 600px) {
+            width: 90%;
+        }
+        @media (min-width: 1000px) {
+            width: 85%;
+        }
+    }
+`;
+
 export default function BlogPost({ data: { blog } }) {
-    console.log(blog);
     return (
         <BlogPostContainer>
             <TitleContainer>
@@ -60,10 +102,12 @@ export default function BlogPost({ data: { blog } }) {
                 </Title>
                 <Img
                     fluid={blog.image.asset.fluid}
-                    style={{ height: '600px' }}
+                    style={{ height: '450px', border: '3px solid #25b3b8' }}
                 />
             </TitleContainer>
-            <pre>{JSON.stringify(blog)}</pre>
+            <BlogPostStyles>
+                <BlockContent blocks={blog.content} />
+            </BlogPostStyles>
         </BlogPostContainer>
     );
 }
@@ -86,8 +130,9 @@ export const query = graphql`
                     marks
                     text
                 }
+                _key
+                _type
                 style
-                list
             }
         }
     }

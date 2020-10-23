@@ -10,6 +10,15 @@ const TitleBar = styled.div`
     background: #252b33;
     color: #25b3b8;
     border-bottom: 7px solid #25b3b8;
+    a {
+        color: #25b3b8;
+        :hover {
+            color: #25b3b8;
+        }
+        :visted {
+            color: #25b3b8;
+        }
+    }
     h3 {
         margin: 10px 0 10px 5px;
         flex: 1;
@@ -53,6 +62,7 @@ const SiteTitle = styled.div`
 const TitleH1 = styled.h1`
     margin: 0;
     font-size: 1.3rem;
+
     @media only screen and (min-width: 600px) {
         font-size: 1.5rem;
     }
@@ -130,7 +140,13 @@ const Header = ({ siteTitle }) => {
     return (
         <MainHeader>
             <TitleBar>
-                <h3>AARONENDSLEY.CODES</h3>
+                <Link
+                    to="/"
+                    style={{ color: '##25b3b8', textDecoration: 'none' }}
+                    alt="Link going back to the first page"
+                >
+                    <h3>AARONENDSLEY.CODES</h3>
+                </Link>
                 <IconContainer>{iterateThroughIcons(iconImages)}</IconContainer>
             </TitleBar>
             <SiteTitle>
@@ -141,6 +157,7 @@ const Header = ({ siteTitle }) => {
                             color: `#252B33`,
                             textDecoration: `none`,
                         }}
+                        alt="Link going back to the first page"
                     >
                         {siteTitle}
                     </Link>
