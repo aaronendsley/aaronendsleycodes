@@ -37,6 +37,7 @@ const TitleText = styled.div`
         margin: 0 5px 0 0;
         padding: 0;
         align-items: start;
+        font-style: italic;
     }
 
     @media (min-width: 1000px) {

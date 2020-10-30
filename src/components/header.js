@@ -1,8 +1,9 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ImageFixed from './image-fixed';
+import { listOfTitles } from '../utils/listOfTitles';
 
 const TitleBar = styled.div`
     width: 100%;
@@ -62,6 +63,8 @@ const SiteTitle = styled.div`
 const TitleH1 = styled.h1`
     margin: 0;
     font-size: 1.3rem;
+    font-style: italic;
+    text-transform: capitalize;
 
     @media only screen and (min-width: 600px) {
         font-size: 1.5rem;
@@ -89,7 +92,21 @@ const IconStyle = styled.div`
     margin-left: 10px;
 `;
 
+function changeSiteName() {
+    const numberOfChoices = listOfTitles.length - 1;
+    const nameChoice = Math.floor(Math.random() * numberOfChoices) + 0;
+    return listOfTitles[nameChoice];
+}
+
 const Header = ({ siteTitle }) => {
+    const [siteName, setSiteName] = useState(changeSiteName());
+    useEffect(() => {
+        console.log(siteName);
+        const interval = setInterval(function () {
+            setSiteName(changeSiteName);
+        }, 15000);
+        return () => clearInterval(interval);
+    });
     const iconImages = useStaticQuery(graphql`
         query {
             ssLogo: file(relativePath: { eq: "ssLogoSmall.png" }) {
@@ -111,6 +128,7 @@ const Header = ({ siteTitle }) => {
             }
         }
     `);
+
     const iterateThroughIcons = (icons) => {
         const links = icons.links.siteMetadata.links;
 
@@ -159,7 +177,7 @@ const Header = ({ siteTitle }) => {
                         }}
                         alt="Link going back to the first page"
                     >
-                        {siteTitle}
+                        {siteName}
                     </Link>
                 </TitleH1>
             </SiteTitle>

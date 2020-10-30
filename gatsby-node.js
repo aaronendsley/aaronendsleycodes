@@ -7,7 +7,6 @@
 // You can delete this file if you're not using it
 
 import path, { resolve } from 'path';
-import fetch from 'isomorphic-fetch';
 
 async function turnBlogPostsIntoPages({ graphql, actions }) {
     const blogTemplate = path.resolve('./src/templates/BlogPost.js');

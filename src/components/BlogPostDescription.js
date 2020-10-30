@@ -7,8 +7,11 @@ const BlogContainer = styled.div`
     display: grid;
     width: 95%;
     margin: 50px auto;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 4fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 4fr));
     grid-column-gap: 10%;
+    @media (min-width: 1000px) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 4fr));
+    }
 `;
 const PostContainer = styled.div`
     display: grid;
@@ -43,6 +46,8 @@ const Title = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: end;
+    font-style: italic;
+    text-transform: capitalize;
     h3 {
         font-size: 1.2rem;
         margin: 0;

@@ -47,6 +47,8 @@ const Title = styled.div`
         display: inline;
         align-self: end;
         text-transform: capitalize;
+        font-weight: bold;
+        font-style: bold;
     }
 
     @media (min-width: 1000px) {
@@ -71,7 +73,9 @@ const BlogPostStyles = styled.div`
         border-bottom: 5px solid #25b3b8;
         border-top: 5px solid #25b3b8;
         width: 95%;
-        font-weight: bolder;
+        font-style: bold;
+        font-weight: bold;
+        text-transform: capitalize;
 
         @media (min-width: 1000px) {
             width: 100%;
@@ -82,7 +86,7 @@ const BlogPostStyles = styled.div`
         padding: 20px;
         line-height: 1.8rem;
         margin: 0 auto;
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         width: 100%;
         @media (min-width: 600px) {
             width: 90%;
@@ -92,6 +96,12 @@ const BlogPostStyles = styled.div`
         }
     }
 `;
+
+// const serializer = {
+//     types{
+//         list: (props)=><ul>{}</ul>
+//     }
+// }
 
 export default function BlogPost({ data: { blog } }) {
     return (
