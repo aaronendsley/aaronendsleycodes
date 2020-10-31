@@ -37,8 +37,8 @@ async function turnBlogPostsIntoPages({ graphql, actions }) {
     });
 }
 
-export async function createPages(params) {
+exports.createPages = async function createPages(params) {
     // Create pages dynamically
     // wait for all promises to be resolved before finishing this function
     await Promise.all([turnBlogPostsIntoPages(params)]);
-}
+};
