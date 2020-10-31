@@ -4,6 +4,7 @@
   "description": "My Gatsby Front end for my blog",
   "version": "0.1.0",
   "author": "Aaron Endsley <aaronendsley@gmail.com>",
+  "type": "module",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "babel-plugin-styled-components": "^1.11.1",
@@ -41,7 +42,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "esm": "^3.2.25",
     "prettier": "^2.1.2"
-    
   },
   "keywords": [
     "gatsby"
