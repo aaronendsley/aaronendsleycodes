@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import path, { resolve } from 'path';
+const path = require('path');
 
 async function turnBlogPostsIntoPages({ graphql, actions }) {
     const blogTemplate = path.resolve('./src/templates/BlogPost.js');
