@@ -5,9 +5,12 @@ import Img from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
 
 const BlogPostContainer = styled.div`
-    width: 95%;
+    width: 100%;
     display: grid;
     margin: 100px auto;
+    @media (min-width: 1000px) {
+        width: 95%;
+    }
 `;
 
 const TitleContainer = styled.div`
@@ -57,7 +60,7 @@ const Title = styled.div`
 `;
 
 const BlogPostStyles = styled.div`
-    width: 80%;
+    width: 95%;
     margin: 80px auto;
     h1,
     h2,
@@ -95,13 +98,10 @@ const BlogPostStyles = styled.div`
             width: 85%;
         }
     }
+    @media (min-width: 1000px) {
+        width: 80%;
+    }
 `;
-
-// const serializer = {
-//     types{
-//         list: (props)=><ul>{}</ul>
-//     }
-// }
 
 export default function BlogPost({ data: { blog } }) {
     return (
