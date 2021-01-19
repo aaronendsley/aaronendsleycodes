@@ -82,6 +82,7 @@ const TextContainer = styled.div`
     flex: 6;
     p {
         margin: 10px 0 0 10px;
+        font-size: 1rem;
     }
 `;
 

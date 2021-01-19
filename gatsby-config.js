@@ -5,13 +5,13 @@ dotenv.config({ path: '.env' });
 module.exports = {
     siteMetadata: {
         title: `AaronEndsley.Codes`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        description: `Aaron Endsley's Blog About Code, Tech and Christianity`,
         links: [
             'https://www.sufficientscripts.io/',
             'https://github.com/aaronendsley',
             'https://twitter.com/aaronendsley',
         ],
-        author: `@gatsbyjs`,
+        author: `Aaron Endsley`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -42,11 +42,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `Aaron-Endsley-Codes`,
+                short_name: `Aaron Endsley Codes`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#25b3b8`,
+                theme_color: `#25b3b8`,
                 display: `minimal-ui`,
                 icon: `src/images/icon.png`, // This path is relative to the root of the site.
             },

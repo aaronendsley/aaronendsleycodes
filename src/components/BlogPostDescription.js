@@ -110,7 +110,7 @@ const ContentContainer = styled.div`
     border: solid 5px #25b3b8;
     border-radius: 20px;
     p {
-        font-size: 0.8rem;
+        font-size: 1rem;
         color: #252b33;
         width: 80%;
         margin: 20px auto;

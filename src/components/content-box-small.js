@@ -1,18 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100%;
-  margin: 70px auto;
-  display: flex;
-  flex: ${props => props.flex};
-  flex-direction: column;
-  flex-basis: auto;
-  min-height: 100%;
-  @media only screen and (min-width: 1000px) {
-    margin: 100px;
-    width: ${props => props.desktopWidth};
-  }
+    width: 100%;
+    margin: 70px auto;
+    display: flex;
+    flex: ${(props) => props.flex};
+    flex-direction: column;
+    flex-basis: auto;
+    min-height: 100%;
+    @media only screen and (min-width: 1000px) {
+        margin: 100px;
+        width: ${(props) => props.desktopWidth};
+    }
 `;
 const TitleBar = styled.div`
   width: 100%;
@@ -34,34 +34,34 @@ const TitleBar = styled.div`
   `;
 
 const ContentTitle = styled.div`
-  border-bottom: solid 4px #252b33;
-  width: 85%;
-  position: relative;
+    border-bottom: solid 4px #252b33;
+    width: 85%;
+    position: relative;
 `;
 
 const TitleText = styled.h2`
-  margin: 0;
-  padding: 0 10px 0 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+    margin: 0;
+    padding: 0 10px 0 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 `;
 
 const ChildContainer = styled.div`
-  width: 100%;
+    width: 100%;
 `;
 
-const ContentBoxSmall = props => {
-  return (
-    <Container flex={props.flex} desktopWidth={props.desktopWidth}>
-      <TitleBar>
-        <ContentTitle>
-          <TitleText>{props.title.toUpperCase()}</TitleText>
-        </ContentTitle>
-      </TitleBar>
-      <ChildContainer>{props.children}</ChildContainer>
-    </Container>
-  );
+const ContentBoxSmall = (props) => {
+    return (
+        <Container flex={props.flex} desktopWidth={props.desktopWidth}>
+            <TitleBar>
+                <ContentTitle>
+                    <TitleText>{props.title.toUpperCase()}</TitleText>
+                </ContentTitle>
+            </TitleBar>
+            <ChildContainer>{props.children}</ChildContainer>
+        </Container>
+    );
 };
 
 export default ContentBoxSmall;

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
-
+import SEO from '../components/seo';
 const BlogPostContainer = styled.div`
     width: 100%;
     display: grid;
@@ -89,7 +89,7 @@ const BlogPostStyles = styled.div`
         padding: 20px;
         line-height: 1.8rem;
         margin: 0 auto;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
         width: 100%;
         @media (min-width: 600px) {
             width: 90%;
@@ -106,6 +106,7 @@ const BlogPostStyles = styled.div`
 export default function BlogPost({ data: { blog } }) {
     return (
         <BlogPostContainer>
+            <SEO description={blog.postArticle} title={blog.postTitle} />
             <TitleContainer>
                 <Title>
                     <h1>{blog.postTitle}</h1>
@@ -126,6 +127,7 @@ export const query = graphql`
     query($slug: String!) {
         blog: sanityBlogPost(slug: { current: { eq: $slug } }) {
             postTitle
+            postArticle
             image {
                 asset {
                     fluid {
